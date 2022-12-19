@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import CartContext from '../store/cart-context'
 
 function Cart() {
+    // display cart data from our context
     const ctx = useContext(CartContext)
     console.log('in Cart', ctx.cart);
   return (

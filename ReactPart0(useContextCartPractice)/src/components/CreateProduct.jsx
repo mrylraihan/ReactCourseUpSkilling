@@ -8,6 +8,7 @@ function CreateProduct() {
         setProduct(e.target.value)
     }
 
+    // will add product to the context product value array 
     const onSubmitHandler = e =>{
         e.preventDefault()
         ctx.setProducts(prev=>{

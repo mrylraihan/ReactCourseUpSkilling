@@ -3,6 +3,8 @@ import CartContext from '../store/cart-context'
 
 function Products() {
     const ctx = useContext(CartContext)
+
+    // will add product to the cart if it has not been added already
     const addToCart =(product)=>{
         if (!ctx.cart.find(ele => ele.name == product.name)) //if this return undefined then it will add to cart 
             ctx.setCart(prev=>{
