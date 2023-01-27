@@ -4,9 +4,7 @@ const SimpleInput = (props) => {
   const [enteredName, setEnteredName] = useState('')
   const [enteredNameIsValid, setEnteredNameIsValid] = useState(true)
   const nameInputRef = useRef()
-  
-
-
+ 
   const nameInputChangeHandler = e =>{
     setEnteredName(e.target.value)
 
