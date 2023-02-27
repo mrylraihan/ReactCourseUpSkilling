@@ -1,5 +1,5 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
-import addressSlice from "./addresSlice";
+import addressSlice from "./addressSlice";
 const initialCount = {
     count:0
 }
