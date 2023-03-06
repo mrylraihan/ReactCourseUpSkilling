@@ -22,6 +22,7 @@ const SimpleInput = (props) => {
     setEnteredNameTouched(true)
     if (enteredName.trim() === '') {
       setEnteredNameIsValid(false)
+      return
     }else{
       setEnteredNameIsValid(true)
     }
@@ -44,14 +45,14 @@ const SimpleInput = (props) => {
     setEnteredName('')
 
   }
-  const nameInputIsValid = !enteredNameIsValid && enteredNameTouched;
-  const nameInputClasses = nameInputIsValid ? 'form-control invalid' : 'form-control'
+  const nameInputIsInValid = !enteredNameIsValid && enteredNameTouched;
+  const nameInputClasses = nameInputIsInValid ? 'form-control invalid' : 'form-control'
   return (
     <form onSubmit={formSubmissionHandler}>
       <div className={nameInputClasses}>
         <label htmlFor='name'>Your Name</label>
         <input ref={nameInputRef} value={enteredName} type='text' id='name' onBlur={nameInputBlurHandler} onChange={nameInputChangeHandler}/>
-        {nameInputIsValid &&  <p className="error-text">name should not be empty!</p>}
+        {nameInputIsInValid &&  <p className="error-text">name should not be empty!</p>}
       </div>
       <div className="form-actions">
         <button type="submit">Submit</button>
