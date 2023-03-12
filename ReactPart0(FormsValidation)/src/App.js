@@ -1,22 +1,30 @@
 import React from 'react';
 import './App.css';
-import FormValidation from './components/FormValidation';
-import FormValidation2 from './components/FormValidation2';
-import FormValidation3 from './components/FormValidation3';
+import FormValidation10 from './components/FormValidation10';
 
+import FormValidation6 from './components/FormValidation6';
+import FormValidation7 from './components/FormValidation7';
+import FormValidation8 from './components/FormValidation8';
+import FormValidation9 from './components/FormValidation9';
 
 
 function App() {
   return (
     <>
-    {/* <div className="app">
-      <FormValidation/>
-    </div>    
-    <div className="app">
-      <FormValidation2/>
-    </div>     */}
     <div className='app'>
-    <FormValidation3/>
+    <FormValidation6/>
+    </div>
+    <div className='app'>
+      <FormValidation7/>
+    </div>
+    <div>
+      <FormValidation8/>
+    </div>
+    <div>
+      <FormValidation9/>
+    </div>
+    <div>
+      <FormValidation10/>
     </div>
     </>
   );
