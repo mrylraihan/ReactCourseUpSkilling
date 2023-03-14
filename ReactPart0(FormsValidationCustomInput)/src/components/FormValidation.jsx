@@ -7,7 +7,7 @@ function FormValidation() {
   const isValid = inputValue.trim() !== ''
   const isNotValid  = !isValid && inputBlur
   
-  // if multiple inputs fields we can consolidate to one boolean
+  // if multiple inputs fields we can consolidate to one 
   let formIsValid = false
   if (isValid){
     formIsValid = true

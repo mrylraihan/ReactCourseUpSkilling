@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import useInput from '../hooks/use-input'
 
 function FormValidCustomHook() {
-    const [inputValue, isTouched, isNotValid, formIsValid, inputOnChangeHandler, onBlurHandler, resetState] = useInput(v=>v.trim()!=='')
+    const [inputValue, isTouched, isNotValid, isValid, inputOnChangeHandler, onBlurHandler, resetState] = useInput(v=>v.trim()!=='')
  
     const onSubmitHandler = e =>{
         e.preventDefault()
@@ -17,7 +17,7 @@ function FormValidCustomHook() {
                 <label>Name :
                       <input type="text" value={inputValue} onChange={inputOnChangeHandler} onBlur={onBlurHandler}/>
                 </label>
-                  <button disabled={formIsValid ?false:true}>submit</button>
+                  <button disabled={isValid ?false:true}>submit</button>
             </div>
               {isNotValid && <p>You didnt write anything!</p>}
         </form>

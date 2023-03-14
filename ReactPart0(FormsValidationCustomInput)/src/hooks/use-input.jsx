@@ -7,11 +7,11 @@ function useInput(fn) {
     const isValid = fn(inputValue)
     const isNotValid = !isValid && isTouched
 
-
-    let formIsValid = false
-    if (isValid) {
-        formIsValid = true
-    }
+// this is only needed if we have multiple inputs plus this would be outside the custom hook 
+    // let formIsValid = false
+    // if (isValid) {
+    //     formIsValid = true
+    // }
 
 
     const inputOnChangeHandler = e => {
@@ -26,7 +26,7 @@ function useInput(fn) {
         setInputValue('')
         setIsTouched(false)
     }
-    return [inputValue, isTouched, isNotValid, formIsValid, inputOnChangeHandler, onBlurHandler, resetState]
+    return [inputValue, isTouched, isNotValid, isValid, inputOnChangeHandler, onBlurHandler, resetState]
 }
 
 export default useInput
