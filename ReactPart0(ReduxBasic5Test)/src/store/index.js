@@ -1,22 +1,19 @@
 import {createStore} from 'redux'
 
 const initial = {
-    count:0,
-    toggle:true
+    counter:0
 }
 
-const countReducer = (state , action)=>{
+const counterReducer = (state , action)=>{
     if(action.type ==='add'){
-        return { ...state, count: state.count + 1 }
+        return { ...state, counter: state.counter + 1 }
     }else if(action.type === 'minus'){
-        return { ...state, count: state.count - 1 }
-    }else if(action.type === 'toggle'){
-        return {...state, toggle: !state.toggle}
+        return { ...state, counter: state.counter - 1 }
     }else{
-        return initial
+        return state
     }
 }
 
-const store = createStore(countReducer, initial)
+const store = createStore(counterReducer, initial)
 
 export default store
