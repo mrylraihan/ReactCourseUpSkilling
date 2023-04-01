@@ -22,9 +22,9 @@ function App() {
     <Router>
     <Navbar/>
     <Routes>
+      <Route path={'/About'} element={<About/>}/>
         <Route path={'/'} element={<Home people={people}/>}/>
         <Route path={'/:cat'} element={<Single people={people}/>} />
-      <Route path={'/About'} element={<About/>}/>
     </Routes>
 
     </Router>
