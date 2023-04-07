@@ -27,7 +27,7 @@ function App() {
       <Route path='/' element={<Home/>}/>
       <Route path='/extra' element={<Extra/>}/>
       <Route path='/all' element={<SeeAll list={list}/>}/>
-        <Route path='/all/:id' element={<SinglePost list={list} />}/>
+        <Route path='/:id' element={<SinglePost list={list} />}/>
         <Route path='/add' element={<AddPost setList={setList}/>}/>
     </Routes>
     
