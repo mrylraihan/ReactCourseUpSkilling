@@ -1,8 +1,14 @@
 import React from 'react'
 
-function ShowAll() {
+function ShowAll({people, setPerson}) {
+
   return (
-    <div>ShowAll</div>
+    <div className='app'>
+      <h1>ShowAll</h1>
+      <ul>
+        {people.map((ele,idx)=><li key={idx} onClick={setPerson.bind(this,ele)}>{ele}</li>)}
+      </ul>
+    </div>
   )
 }
 
