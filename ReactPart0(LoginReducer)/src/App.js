@@ -8,7 +8,7 @@ const initial = {
   user: { userName :'', password:''},
   login:false,
   error:'',
-  loginData: { userName: 'Wallie', passWord: 'Gundam' }
+  loginData: { userName: 'Wallie', passWord: 'Gundam'}
 }
 
 const loginReducer = (state, action)=>{
