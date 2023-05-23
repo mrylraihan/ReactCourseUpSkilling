@@ -1,26 +1,27 @@
-import { Route, Switch } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Welcome from './pages/Welcome';
 import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import MainHeader from './components/MainHeader';
 
+// https://www.youtube.com/watch?v=zEQiNFAwDGo
 function App() {
   return (
     <div>
       <MainHeader />
       <main>
-        <Switch>
-          <Route path='/welcome'>
-            <Welcome />
+        <Routes>
+          <Route path='/' element={<Navigate to='/welcome' replace={true} />}/>
+          <Route path='/welcome' element={<Welcome />}>
+            <Route path='new-user' element={<p>Welcome, new user!</p>} />
           </Route>
-          <Route path='/products' exact>
-            <Products />
+
+          <Route path='/products' element={<Products />}>
+            <Route path=':productId' element={<ProductDetail />} />
           </Route>
-          <Route path='/products/:productId'>
-            <ProductDetail />
-          </Route>
-        </Switch>
+>
+        </Routes>
       </main>
     </div>
   );
