@@ -7,7 +7,7 @@ function ShowOne() {
     const [post, setPost] = useState('')
     const nav = useNavigate()
     useEffect(() => {
-        fnGetOne(setPost, id)
+        fnGetOne(setPost,id)
     }, [id])
 
  console.log(id)
