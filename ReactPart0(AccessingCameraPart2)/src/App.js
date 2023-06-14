@@ -1,6 +1,7 @@
 
 import { useRef, useEffect, useState} from 'react';
 import './App.css';
+import CameraComponent from './Test';
 
 function App() {
   const videoRef = useRef(null);
@@ -51,6 +52,7 @@ function App() {
           <canvas ref={photoRef}></canvas>
           <button onClick={closePhoto}>CLOSE!</button>
       </div>
+      {/* <CameraComponent/> */}
     </div>
   );
 }
