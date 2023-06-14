@@ -6,6 +6,7 @@ function Level1() {
     const [name, setName] = useRecoilState(NameData)
 
     const addFirstNameToAtom = (e)=>{
+        // setName({ ...name, firstName: e.target.value })
         setName(prev=>{
             return {...prev, firstName : e.target.value}
         })

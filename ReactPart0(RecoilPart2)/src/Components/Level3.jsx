@@ -1,11 +1,11 @@
 import React from 'react'
 import { useRecoilValue } from 'recoil'
-import ListSelector from '../store/NameSelector'
-// import ListData from '../store/ListData'
+import NameSelector from '../store/NameSelector'
+// import NameData from '../store/NameData'
 function Level3() {
-    // const [list, setList] = useRecoilState(ListData)
-  const name = useRecoilValue(ListSelector)
-  const { fullName } = useRecoilValue(ListSelector)
+    // const [name, setName] = useRecoilState(NameData)
+  const name = useRecoilValue(NameSelector)
+  const { fullName } = useRecoilValue(NameSelector)
   console.log(name)
   return (
     <div>
