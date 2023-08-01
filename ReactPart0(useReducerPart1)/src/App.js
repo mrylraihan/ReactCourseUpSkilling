@@ -14,14 +14,26 @@ const totalReducer = (state, action)=>{
   if(action.type == "add"){
     const foundItem = state.cart.find(ele=>ele.id === action.item.id)
     if(!foundItem){
-      return {...state, cart:[...state.cart, action.item], totalPrice:state.totalPrice + action.item.price, quantity:state.quantity+ 1}
+      let newItem = action.item
+      newItem.quantity = 1
+      return { ...state, cart: [...state.cart, newItem], totalPrice:state.totalPrice + action.item.price, quantity:state.quantity+ 1}
     }else{
+      foundItem.quantity = foundItem.quantity + 1 
       return { ...state, quantity: state.quantity+1, totalPrice: state.totalPrice + action.item.price }
     }
   }else if(action.type == 'minus'){
-    // need to fix
     const foundItem = state.cart.find(ele => ele.id === action.item.id)
-    return {...state, totalPrice: state.totalPrice - foundItem.price, quantity:state.quantity-1}
+    if(foundItem){
+      if(foundItem.quantity>1){
+        foundItem.quantity = foundItem.quantity - 1
+        return {...state, totalPrice: state.totalPrice - foundItem.price, quantity:state.quantity-1}
+      }else{
+        const newList = state.cart.filter(ele=>ele.id!==foundItem.id)
+        return { ...state,cart:newList, totalPrice: state.totalPrice - foundItem.price, quantity: state.quantity - 1 }
+      }
+    }else{
+      return state
+    }
   
   }else{
     return state
